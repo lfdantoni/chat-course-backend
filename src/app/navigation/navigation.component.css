@@ -1,0 +1,24 @@
+.navbar{
+    background: #424242;
+}
+
+.nav>li>a {
+    text-transform: uppercase;
+    border: none;
+    margin: 0 17px;
+    font: bold 14px/20px Orbitron;
+    color: #ffffff;
+}
+
+.nav>li.active>a {
+    color: #ffa05c;
+    background-color: transparent;
+}
+
+.social{
+    float: right;
+    color: #ffffff;
+}
+.social li{
+    margin: 0.1em 0.2em; 
+}

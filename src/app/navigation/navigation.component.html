@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="" [ngClass]="{'active': section.active}" *ngFor="let section of sections">
+        <a href="#{{section.hashTag}}" (click)="changeSection(section)">{{section.name}}</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav social">
+      <li class="fa fa-linkedin fa-3x"></li>
+      <li class="fa fa-facebook fa-3x"></li>
+      <li class="fa fa-twitter fa-3x"></li>
+      <li class="fa fa-github-alt fa-3x"></li>
+    </ul>
+  </div>
+</nav>
