@@ -11,6 +11,7 @@ import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './index';
 import { NavigationComponent } from './navigation/navigation.component';
+import { HeaderComponent } from './header/header.component';
 // import { RouterModule } from '@angular/router';
 // import { appRoutes } from './app/app.routing';
 
@@ -21,7 +22,7 @@ import { NavigationComponent } from './navigation/navigation.component';
   /** Root App Component */
   bootstrap: [ AppComponent ],
   /** Our Components */
-  declarations: [ AppComponent, NavigationComponent ],
+  declarations: [ AppComponent, NavigationComponent, HeaderComponent ],
   imports: [
     /**
      * NOTE: Needs to be your first import (!)

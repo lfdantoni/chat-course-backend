@@ -1,0 +1,48 @@
+.header {
+    background-image: url(../assets/header.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: scroll;
+    min-height: 500px;
+}
+
+.header .logo_wrap .logo .logo_tagline {
+    font-size: 1.5em;
+    line-height: 1.6em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffa05c;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.header .logo_wrap {
+    position: relative;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 90px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header .logo_wrap .logo {
+    float: none !important;
+    display: inline-block;
+    padding: 0;
+}
+
+.header .logo_wrap .logo .logo_h {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.logo h1{
+    font: bold 5em Orbitron;
+    color: #ffa05c;
+    text-shadow: 0px 0px 18px rgba(0, 0, 0, 1);
+}
