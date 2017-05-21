@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ISection } from '../models/ISection'
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-navigation',
@@ -24,4 +25,9 @@ export class NavigationComponent implements OnInit {
     this.activeSection.active = true;
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    console.log(event);
+    console.log(event.target.innerWidth);
+  }
 }
