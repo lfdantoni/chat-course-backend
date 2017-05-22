@@ -67,6 +67,9 @@
 
 @media (max-width:767px){
     .header{
-        position: fixed;
+        overflow-x: hidden;
+    }
+    .header.slide-active{
+        overflow: hidden;
     }
 }

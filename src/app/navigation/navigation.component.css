@@ -68,9 +68,13 @@
     position: relative
 }
 
-
-
 @media (max-width:767px) { 
+    #slide-nav.navbar-inverse #navbar-height-col {
+        background: #333;
+        z-index: 1;
+        border: 0;
+    }
+
 	#slide-nav .container {
 	    margin: 0;
 	    padding: 0!important;

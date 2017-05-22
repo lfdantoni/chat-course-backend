@@ -48,7 +48,7 @@ export class NavigationComponent implements OnInit {
     $event.preventDefault();
 
     //stick in the fixed 100% height behind the navbar but don't wrap it
-    $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
+    //$('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
 
     // Enter your ids or classes
     var toggler = '.navbar-toggle';
@@ -81,6 +81,6 @@ export class NavigationComponent implements OnInit {
     $('#slidemenu').toggleClass('slide-active');
 
 
-    $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+    $('#page-content, .navbar, body, .navbar-header, .header').toggleClass('slide-active');
   }
 }
