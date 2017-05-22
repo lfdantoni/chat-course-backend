@@ -27,6 +27,7 @@
 .container {
     margin-right: auto;
     margin-left: auto;
+    position: relative;
 }
 
 .header .logo_wrap .logo {
@@ -45,4 +46,27 @@
     font: bold 5em Orbitron;
     color: #ffa05c;
     text-shadow: 0px 0px 18px rgba(0, 0, 0, 1);
+}
+
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#page-content {
+    position: relative;
+    padding-top: 70px;
+    left: 0;
+}
+#page-content.slide-active {
+    padding-top: 0
+}
+
+
+@media (min-width:768px) { 
+	#page-content {
+	    left: 0!important;
+	}
+}
+
+@media (max-width:767px){
+    .header{
+        position: fixed;
+    }
 }
