@@ -10,3 +10,7 @@ body {
     color: #7f7e7d;
     background-color: #424242;
 }
+
+body.slide-active{
+    /*position: fixed;*/
+}

@@ -2346,4 +2346,8 @@ body {
     color: #7f7e7d;
     background-color: #424242;
 }
+
+body.slide-active{
+    /*position: fixed;*/
+}
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXMuYnVuZGxlLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/

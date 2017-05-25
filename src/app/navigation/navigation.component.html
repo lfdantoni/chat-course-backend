@@ -36,15 +36,18 @@
     <a class="navbar-brand" href="#">LD</a>
    </div>
    <div id="slidemenu">
-    <form class="navbar-form navbar-right" role="form">
+    <!--<form class="navbar-form navbar-right" role="form">
       <div class="form-group">
         <input type="search" placeholder="search" class="form-control">
       </div>
       <button type="submit" class="btn btn-primary">Search</button>
-    </form>
+    </form>-->
      
     <ul class="nav navbar-nav">
-     <li class="active"><a href="#">Home</a></li>
+      <li class="" [ngClass]="{'active': section.active}" *ngFor="let section of sections">
+        <a href="#{{section.hashTag}}" (click)="changeSection(section)">{{section.name}}</a>
+      </li>
+     <!--<li class="active"><a href="#">Home</a></li>
      <li><a href="#about">About</a></li>
      <li><a href="#contact">Contact</a></li>
      <li class="dropdown" [class.open]="dropDownOpen">
@@ -80,7 +83,13 @@
        <li><a href="#">One more separated link</a></li>
        <li><a href="#">One more separated link</a></li>
       </ul>
-     </li>
+     </li>-->
+    </ul>
+    <ul class="nav navbar-nav social">
+      <li> <a href="https://www.linkedin.com/in/leonardo-dantoni-93aba422/" target="_blank"><span class="fa fa-linkedin fa-3x"></span></a> </li>
+      <li><a href="https://www.facebook.com/leonardo.dantoni" target="_blank"><span class="fa fa-facebook fa-3x"></span></a></li>
+      <li><a href="https://twitter.com/lfdantoni" target="_blank"><span class="fa fa-twitter fa-3x"></span></a></li>
+      <li><a href="https://github.com/lfdantoni" target="_blank"><span class="fa fa-github-alt fa-3x"></span></a></li>
     </ul>
           
    </div>

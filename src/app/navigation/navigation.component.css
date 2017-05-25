@@ -69,6 +69,14 @@
 }
 
 @media (max-width:767px) { 
+    .social{
+        float: none;
+        text-align: center;
+    }
+    #slidemenu.slide-active{
+        height: 500px;
+        overflow-y: scroll; 
+    }
     #slide-nav.navbar-inverse #navbar-height-col {
         background: #333;
         z-index: 1;
@@ -111,7 +119,7 @@
 	#slide-nav #slidemenu .navbar-nav {
 	    min-width: 0;
 	    width: 100%;
-	    margin: 0;
+	    margin: 20px 0;
 	}
 	#slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
 	    min-width: 0;
@@ -120,6 +128,9 @@
 	}
 	#slide-nav {
 	    border-top: 0
+	}
+    #slide-nav.slide-active {
+	    position: fixed;
 	}
 	#slide-nav.navbar-inverse #slidemenu {
 	    background: #333
