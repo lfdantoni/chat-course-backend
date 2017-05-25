@@ -79,6 +79,7 @@ export class NavigationComponent implements OnInit {
 
     $($event.currentTarget).toggleClass('slide-active', !selected);
     $('#slidemenu').toggleClass('slide-active');
+    $('#nav-icon2').toggleClass('open');
 
 
     $('#page-content, .navbar, body, .navbar-header, .header').toggleClass('slide-active');
