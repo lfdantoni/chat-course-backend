@@ -72,4 +72,7 @@
     .header.slide-active{
         overflow: hidden;
     }
+    .logo h1{
+        font: bold 4em Orbitron;
+    }
 }
