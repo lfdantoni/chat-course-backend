@@ -1,0 +1,35 @@
+.about{
+    background-color: #b3a58b;
+    color: white;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 10px 0;
+}
+
+.extra-block-1 p {
+    margin-bottom: 26px;
+}
+
+h2{
+    font: bold 66px/70px Orbitron;
+    color: #ffa05c;
+}
+.extra-block-1 h3 {
+    font-family: Open Sans;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+h3 {
+    font: bold 18px/22px Orbitron;
+}
+.extra-block-1 h3:after {
+    content: '';
+    display: block;
+    max-width: 570px;
+    height: 5px;
+    margin: 26px auto 54px;
+    background-color: black;
+}
