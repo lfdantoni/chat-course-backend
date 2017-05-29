@@ -33,3 +33,15 @@ h3 {
     margin: 26px auto 54px;
     background-color: black;
 }
+.me-photo{
+    border-radius: 50% 50%;
+}
+
+@media (max-width: 767px){
+    .about{
+        margin: 0;
+    }
+    .me-photo{
+        max-width: 100%;
+    }
+}
