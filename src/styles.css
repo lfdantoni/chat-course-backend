@@ -14,3 +14,6 @@ body {
 body.slide-active{
     /*position: fixed;*/
 }
+.container{
+    margin-left: 0;
+}
