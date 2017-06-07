@@ -16,8 +16,8 @@
 }
 
 .social{
-    float: right;
     color: #ffffff;
+    margin-right: 0;
 }
 .social li{
     margin: 0.4em 0.5em; 
