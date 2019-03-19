@@ -21,10 +21,10 @@ wss.on('connection', (ws) => {
     clients--;
       console.log('Client disconnected');
   });
-});
 
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString() + 'clients: ' + clients);
+  ws.on('message', (event) => {
+    wss.clients.forEach((client) => {
+        client.send(event);
+    });
   });
-}, 1000);
+});
