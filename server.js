@@ -2,15 +2,40 @@
 
 const express = require('express');
 const SocketServer = require('ws').Server;
-const path = require('path');
+const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, 'index.html');
+const app = express();
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+// ---------------------------------------------------
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
+app.use(require('method-override')());
+app.use(express.static(__dirname + '/public'));
+
+//------------------------------------------------------
+
+
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.json({'errors': {
+        message: err.message,
+        error: {}
+    }});
+});
+
+const server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+// WEBSOCKET ------------------------------------------------------------------
 const wss = new SocketServer({ server });
 
 let clients = 0;
