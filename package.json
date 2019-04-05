@@ -17,6 +17,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "method-override": "^3.0.0",
+    "mongodb": "^3.2.2",
     "ws": "^6.2.1"
   }
 }

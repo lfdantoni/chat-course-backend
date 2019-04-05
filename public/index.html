@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Chat Test</title>
 </head>
 <body>
-    TEST
+    <label name="message">Message</label> <input type="text" id="message" name="message" />
+    <button id="sendMessage" type="submit">Send</button>
+    <br />
+    <div id="messages"></div>
+    <script type="text/javascript">
+        var HOST = location.origin.replace(/^http/, 'ws')
+        var ws = new WebSocket(HOST);
+        var el = document.getElementById('messages');
+
+        ws.onmessage = function (event) {
+            el.innerHTML += JSON.parse(event.data).text + '<br />';
+        };
+
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            ws.send(JSON.stringify({text: document.getElementById('message').value}));
+            document.getElementById('message').value = '';
+        })
+    </script>
 </body>
 </html>
