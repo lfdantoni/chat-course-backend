@@ -1,4 +1,5 @@
 'use strict';
+const videosHttp = require('./videos.http');
 
 const express = require('express');
 const SocketServer = require('ws').Server;
@@ -113,6 +114,22 @@ app.post("/api/settings", function(req, res) {
   }
 });
 
+app.post("/api/videos", function(req, res) {
+  videosHttp.postVideo(req, res, db, handleError);
+});
+
+app.get("/api/videos", function(req, res) {
+  videosHttp.getVideo(req, res, db, handleError, ObjectID);
+});
+
+app.put("/api/videos/:id", function(req, res) {
+  videosHttp.putVideo(req, res, db, handleError, ObjectID);
+});
+
+app.delete("/api/videos/:id", function(req, res) {
+  videosHttp.deleteVideo(req, res, db, handleError, ObjectID);
+});
+
 /*  "/api/contacts/:id"
  *    GET: find contact by id
  *    PUT: update contact by id
@@ -138,13 +155,13 @@ app.get("/api/settings", function(req, res) {
 app.put("/api/settings/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
+  delete updateDoc.createDate;
 
   db.collection(CONTACTS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set: updateDoc}, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to update contact");
     } else {
-      updateDoc._id = req.params.id;
-      res.status(200).json(updateDoc);
+      res.status(200).json(doc);
     }
   });
 });
