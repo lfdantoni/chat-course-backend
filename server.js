@@ -114,12 +114,17 @@ app.post("/api/settings", function(req, res) {
   }
 });
 
+// MANAGE VIDEOS
 app.post("/api/videos", function(req, res) {
   videosHttp.postVideo(req, res, db, handleError);
 });
 
-app.get("/api/videos", function(req, res) {
+app.get("/api/videos/:id", function(req, res) {
   videosHttp.getVideo(req, res, db, handleError, ObjectID);
+});
+
+app.get("/api/videos", function(req, res) {
+  videosHttp.getVideos(req, res, db, handleError, ObjectID);
 });
 
 app.put("/api/videos/:id", function(req, res) {
@@ -129,6 +134,8 @@ app.put("/api/videos/:id", function(req, res) {
 app.delete("/api/videos/:id", function(req, res) {
   videosHttp.deleteVideo(req, res, db, handleError, ObjectID);
 });
+// END MANAGE VIDEOS 
+
 
 /*  "/api/contacts/:id"
  *    GET: find contact by id

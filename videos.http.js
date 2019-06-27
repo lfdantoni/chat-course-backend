@@ -1,6 +1,8 @@
 const VIDEO_COLLECTION = 'videos';
 
-const getVideo = (req, res, db, handleError, ObjectID) => {
+const getVideos = (req, res, db, handleError, ObjectID) => {
+  console.log(req.params.id);
+  const query = req.params.id ? {_id: new ObjectID(req.params.id)} : {};
   db.collection(VIDEO_COLLECTION).find({}, function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contact");
@@ -14,6 +16,29 @@ const getVideo = (req, res, db, handleError, ObjectID) => {
       function(err) {
         res.status(200).json(arr);
       });
+    }
+  });
+}
+
+const getVideo = (req, res, db, handleError, ObjectID) => {
+  let videoId = '';
+
+  try {
+    videoId = new ObjectID(req.params.id);
+  } catch (error) {
+    handleError(res, "Invalid id", "Invalid id", 400);
+    return;
+  }
+
+  db.collection(VIDEO_COLLECTION).findOne({_id: videoId}, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get contact");
+    } else {
+      if(!doc) {
+        handleError(res, "Video not found", "Video not found", 404);
+      } else {
+        res.status(200).json(doc);
+      }
     }
   });
 }
@@ -73,4 +98,4 @@ const deleteVideo = (req, res, db, handleError, ObjectID) => {
   })
 }
 
-module.exports = {getVideo, postVideo, putVideo, deleteVideo}
+module.exports = {getVideos, getVideo, postVideo, putVideo, deleteVideo}
